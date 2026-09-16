@@ -11,7 +11,7 @@ import com.mycompany.loginsystem_nceba_part1.LoginClass;
 import org.junit.jupiter.api.Test;
 import static
 org.junit.jupiter.api.Assertions.*;
-ss
+
 public class LoginClassTest {
    @Test
    public void testLoginSuccess(){
