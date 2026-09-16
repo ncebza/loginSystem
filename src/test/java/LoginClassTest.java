@@ -14,9 +14,15 @@ org.junit.jupiter.api.Assertions.*;
 
 public class LoginClassTest {
    @Test
-   public void testLoginSuccess(){
+   public void testLoginFail(){
        LoginClass login = new LoginClass();
        boolean result = login.loginUser("user_1", "WrongPass", "user_1", "Pass123!" );
        assertFalse(result);
    }
+   @Test
+   public void testLoginSuccess(){
+       LoginClass login = new LoginClass();
+       boolean result = login.loginUser("user_1", "Pass123!", "user_1", "Pass123!" );
+       assertTrue(result);
+}
 }
