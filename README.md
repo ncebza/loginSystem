@@ -32,7 +32,7 @@ To run the tests in NetBeans, right click the project and choose Test.
 
 ## How to run
 
-Open the project in NetBeans and run LoginSystem_Nceba_Part1.java. Follow the prompts in the output window.
+Open the project in NetBeans and run LoginSystem_Nceba_Part1.java. Follow the prompts in the output windows.
 
 ## Notes
 
