@@ -38,7 +38,7 @@ public class Register {
               hasSpecial = true;
           }
       }
-      //The password is vaild if all the three types of characters are found
+      //The passwaord is valid if all the three type of characters are found
       return hasCapital
               && hasNumber
               && hasSpecial;

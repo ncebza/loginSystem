@@ -24,7 +24,7 @@ public class LoginSystem_Nceba_Part1 {
          String regPhone = "";
          
          
-         //Prompt user
+         //Prompt user for the name and surname
          Scanner input = new
       Scanner(System.in);
         System.out.print("Enter Name");
@@ -47,7 +47,7 @@ public class LoginSystem_Nceba_Part1 {
            System.out.println("");
                    } 
     }
-      //password
+      //password print if its captured or not
       while(true){
           System.out.print("Enter Password: ");
        password = input.nextLine();
@@ -75,7 +75,7 @@ public class LoginSystem_Nceba_Part1 {
           }
       
                      
-      //Login section from here
+      //Login section from here when the user logs in
       System.out.println("\n==== LOGIN ===" );
       System.out.print("Enter Username: ");
       String loginUser = input.nextLine();
