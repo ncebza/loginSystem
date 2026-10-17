@@ -48,5 +48,17 @@ public class Message {
         USED_IDS.add(id);
       return id;
     }
+    public boolean checkMesageID(){
+        return messageID != null && messageID.length() <= 10;
+    }
+    public boolean checkRecipientCell()
+    {
+        if (recipient == null || !
+                recipient.startsWith("+")){
+            return false;
+        }
+        //Allow an international number with 8 to 15 digits 
+        //after removing the leading plus sign
+    }
     
 }
