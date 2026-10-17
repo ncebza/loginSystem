@@ -18,7 +18,7 @@ public class LoginClass {
             public String returnLoginStatus(String enteredUser, String enteredPass, 
                     String regUser, String regPass, String name, String surname){
                 if (loginUser(enteredUser, enteredPass, regUser, regPass)){
-                    return "Welcome"
+                    return "Welcome "
                             + name
                             + ", "
                             +surname
