@@ -81,9 +81,10 @@ public class LoginSystem_Nceba_Part1 {
       String loginUser = input.nextLine();
       System.out.print("Enter Passowrd: ");
       String loginPass  = input.nextLine();
-      String message = login.returnLoginStatus(loginUser, loginPass, regUsername, regPassword, name, surname);
-      System.out.println(message);
-      input.close();
+     String message = login.returnLoginStatus(loginUser, loginPass, regUsername, regPassword, name, surname);
+     System.out.println(message);
+     input.close();
+    
       }
     }
 
