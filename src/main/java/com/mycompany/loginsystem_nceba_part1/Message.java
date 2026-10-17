@@ -33,6 +33,20 @@ public class Message {
         this.messageID = generateMessageID();
         this.messageHash = createMessageHash();
     }
+    private String generateMessageID()
+    {
+        String id;
         
+        do{
+            long number = 1_000_000_000
+                    + (long)
+                    (RANDOM.nextDouble()*9_000_000_000L);
+            id = String.valueOf(number);
+      
+        }
+        while (USED_IDS.contains(id));
+        USED_IDS.add(id);
+      return id;
+    }
     
 }
