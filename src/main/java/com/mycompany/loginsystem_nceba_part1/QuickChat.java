@@ -11,6 +11,7 @@ package com.mycompany.loginsystem_nceba_part1;
 import java.util.Scanner;
 public class QuickChat {
        private final Scanner input;
+       private int totalMessagesSent = 0;
 
     public QuickChat(Scanner input) {
         this.input = input;
@@ -86,6 +87,9 @@ public class QuickChat {
                 } 
               
                 System.out.println(message.SentMessage(choice));
+                if (choice == 1){
+                    totalMessagesSent++;
+                }
 
                 if (choice == 1) {
                     System.out.println("\nMessage details:");
