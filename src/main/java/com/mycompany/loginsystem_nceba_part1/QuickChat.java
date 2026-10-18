@@ -15,4 +15,26 @@ public class QuickChat {
     public QuickChat(Scanner input) {
         this.input = input;
     }
+    public void runChat() {
+        System.out.println("\nWelcome to QuickChat.");
+
+        int numberOfMessages = readPositiveNumber(
+                "How many messages would you like to send? ");
+
+        int messagesCreated = 0;
+        int nextMessageNumber = 0;
+
+        while (true) {
+            System.out.println("\n1) Send Messages");
+            System.out.println("2) Show recently sent messages");
+            System.out.println("3) Quit");
+            System.out.print("Choose an option: ");
+
+            String option = input.nextLine();
+
+            if (option.equals("1")) {
+                if (messagesCreated >= numberOfMessages) {
+                    System.out.println("You have reached your message limit.");
+                    continue;
+                }
 }
