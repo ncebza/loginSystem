@@ -52,4 +52,14 @@ public class MessageTest {
 
         assertFalse(message.checkMessageLength());
     } 
+   @Test
+    public void testCreateMessageHash() {
+        Message message = new Message(
+                1, "+27812345678", "Hi there");
+
+        String hash = message.createMessageHash();
+
+        assertTrue(hash.matches("[0-9]{2}:1:HITHERE"));
+    }
+ 
 }
