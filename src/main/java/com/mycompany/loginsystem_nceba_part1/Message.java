@@ -23,8 +23,8 @@ public class Message {
     private String messageHash; 
     
     private static final Random RANDOM = new Random();
-    private Static final Set<String>USED_IDS = new HashSet<>();
-    private Static  final ArrayList<Message> SENT_MESSAGES = 
+    private static final Set<String>USED_IDS = new HashSet<>();
+    private static  final ArrayList<Message> SENT_MESSAGES = 
             new ArrayList<>();
     public Message(int messageNumber, String recipient, String messageText){
         this.messageNumber = messageNumber;
