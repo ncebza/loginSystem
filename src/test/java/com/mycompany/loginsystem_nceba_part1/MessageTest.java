@@ -43,4 +43,13 @@ public class MessageTest {
 
         assertTrue(message.checkMessageLength());
     } 
+     @Test
+    public void testCheckMessageLengthFailure() {
+        String longMessage = "A".repeat(251);
+
+        Message message = new Message(
+                1, "+27812345678", longMessage);
+
+        assertFalse(message.checkMessageLength());
+    } 
 }
