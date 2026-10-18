@@ -81,7 +81,7 @@ public class Message {
     public String SentMessage(int choice){
         if (choice == 1){
             SENT_MESSAGES.add(this);
-            return "Message succesfully sent.";
+            return "Message successfully sent.";
         }else if (choice ==2){
             return storeMessage();
         }else if (choice == 3){
