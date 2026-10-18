@@ -58,7 +58,35 @@ public class Message {
             return false;
         }
         //Allow an international number with 8 to 15 digits 
-        //after removing the leading plus sign
-    }
+        //after removing the leading plus sign.
+        String digits = recipient.substring(1);
+        return digits.matches("[0-9] {8,15}");
     
+    }
+    public boolean checkMessageLength(){
+        return messageText != null && messageText.length() <= 250;
+    }
+    public String createMessageHash(){
+        if (messageID == null || 
+                messageText == null
+                ||
+                messageText.trim().isEmpty()){
+            return"";
+        }
+        String[] words = messageText.trim().split("\\s+");
+        String firstWord = words[0].replaceAll("[^a-zA-Z0-9]", "");
+        String lastWord = words[words.length - 1].replaceAll("[^a-zA-Z0-9]", "");
+        return (messageID.substring(0,2) + ":" +messageNumber + ":" + firstWord + lastWord).toUpperCase();
+    }
+    public String SentMessage(int choice){
+        if (choice == 1){
+            SENT_MESSAGES.add(this);
+            return "Message Succesfully sent.";
+        }else if (choice ==2){
+            return storeMessage();
+        }else if (choice == 3){
+            return "Press 0 to delete the message.";
+        }
+        return "Invalid message option";
+    }
 }
