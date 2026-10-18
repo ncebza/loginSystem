@@ -83,7 +83,18 @@ public class QuickChat {
                 if (choice < 1 || choice > 3) {
                     System.out.println("Invalid option.");
                     continue;
-                }    
+                } 
+              
+                System.out.println(message.SentMessage(choice));
+
+                if (choice == 1) {
+                    System.out.println("\nMessage details:");
+                    System.out.println("Message ID: " + message.getMessageID());
+                    System.out.println("Message Hash: " + message.getMessageHash());
+                    System.out.println("Recipient: " + message.getRecipient());
+                    System.out.println("Message: " + message.getMessageText());
+                }
+  
 }
 
                      
