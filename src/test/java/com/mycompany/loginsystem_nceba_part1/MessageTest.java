@@ -20,5 +20,20 @@ public class MessageTest {
 
         assertTrue(message.checkMessageID());
         assertEquals(10, message.getMessageID().length());
-    }  
+    } 
+     @Test
+    public void testCheckRecipientCellSuccess() {
+        Message message = new Message(
+                1, "+27812345678", "Hello there");
+
+        assertTrue(message.checkRecipientCell());
+    }
+
+    @Test
+    public void testCheckRecipientCellFailure() {
+        Message message = new Message(
+                1, "27812345678", "Hello there");
+
+        assertFalse(message.checkRecipientCell());
+    }
 }
