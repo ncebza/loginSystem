@@ -95,5 +95,26 @@ public class Message {
             output.append("Message ID").append (message.messageID).append("\n");
             output.append("Message: ").append(message.messageText).append("\n\n");
         }
+         return output.toString();
     }
+     public int returnTotalMessagess() {
+        return SENT_MESSAGES.size();
+     }
+     public String storeMessage() {
+        try (FileWriter writer =
+                new FileWriter("messages.json", true)) {
+
+            writer.write("{\n");
+              writer.write(" \"messageID\": \"" + escapeJSON(messageID) + "\",\n");
+              writer.write(" \"messageNumber\": " + messageNumber + ",\n");
+              writer.write(" \"recipient\": \"" + escapeJSON(recipient) + "\",\n");
+             writer.write(" \"messageText\": \"" + escapeJSON(messageText) + "\",\n");
+             writer.write(" \"messageHash\": \"" + escapeJSON(messageHash) + "\"\n");
+            writer.write("}\n");
+
+            return "Message successfully stored.";
+
+        } catch (IOException e) {
+            return "Message could not be stored: " + e.getMessage();
+        }  
 }
