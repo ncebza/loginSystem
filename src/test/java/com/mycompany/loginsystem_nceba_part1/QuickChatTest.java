@@ -15,5 +15,25 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class QuickChatTest {
-    
+     @Test
+    public void testShowRecentlySentMessages() {
+        String simulatedInput =
+                "1\n2\n3\n";
+
+        Scanner scanner = new Scanner(simulatedInput);
+        QuickChat quickChat = new QuickChat(scanner);
+
+        ByteArrayOutputStream output =
+                new ByteArrayOutputStream();
+
+        PrintStream originalOutput = System.out;
+
+        try {
+            System.setOut(new PrintStream(output));
+            quickChat.runChat();
+        } finally {
+            System.setOut(originalOutput);
+        } 
+      assertTrue(output.toString().contains("Coming Soon."));
+    }
 }
