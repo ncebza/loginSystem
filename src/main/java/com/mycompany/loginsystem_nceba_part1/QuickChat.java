@@ -61,6 +61,29 @@ public class QuickChat {
                     System.out.println("Please enter a message of 250 characters or less.");
                     continue;
                 }
+              System.out.println("\nMessage Hash: "
+                        + message.createMessageHash());
+
+                System.out.println("\nChoose what to do with your message:");
+                System.out.println("1) Send message");
+                System.out.println("2) Store message");
+                System.out.println("3) Disregard message");
+                System.out.print("Choose an option: ");
+
+                String messageChoice = input.nextLine();
+                int choice;
+
+                try {
+                    choice = Integer.parseInt(messageChoice);
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid option.");
+                    continue;
+                }
+
+                if (choice < 1 || choice > 3) {
+                    System.out.println("Invalid option.");
+                    continue;
+                }    
 }
 
                      
