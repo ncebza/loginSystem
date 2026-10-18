@@ -48,7 +48,7 @@ public class Message {
         USED_IDS.add(id);
       return id;
     }
-    public boolean checkMesageID(){
+    public boolean checkMessageID(){
         return messageID != null && messageID.length() <= 10;
     }
     public boolean checkRecipientCell()
@@ -60,7 +60,7 @@ public class Message {
         //Allow an international number with 8 to 15 digits 
         //after removing the leading plus sign.
         String digits = recipient.substring(1);
-        return digits.matches("[0-9] {8,15}");
+        return digits.matches("[0-9]{8,15}");
     
     }
     public boolean checkMessageLength(){
@@ -81,7 +81,7 @@ public class Message {
     public String SentMessage(int choice){
         if (choice == 1){
             SENT_MESSAGES.add(this);
-            return "Message Succesfully sent.";
+            return "Message succesfully sent.";
         }else if (choice ==2){
             return storeMessage();
         }else if (choice == 3){
