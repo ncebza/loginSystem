@@ -135,4 +135,7 @@ public class Message {
       public int getMessageNumber() {
         return messageNumber;
     }
+    public String getRecipient() {
+        return recipient;
+    }    
 }
