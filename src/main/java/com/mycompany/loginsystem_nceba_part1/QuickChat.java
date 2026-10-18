@@ -124,6 +124,13 @@ public class QuickChat {
                 if (number > 0) {
                     return number;
                 }
+                 System.out.println("Enter a number greater than zero.");
+
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a valid whole number.");
+            }
+        }
+    }
 }
 
                      
