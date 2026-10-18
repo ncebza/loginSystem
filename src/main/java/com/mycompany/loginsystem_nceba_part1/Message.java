@@ -117,4 +117,8 @@ public class Message {
         } catch (IOException e) {
             return "Message could not be stored: " + e.getMessage();
         }  
+     }
+      private String escapeJSON(String text) {
+        if (text == null) {
+            return ""; 
 }
