@@ -41,17 +41,15 @@ public class QuickChat {
                 System.out.print("Enter recipient number with international code: ");
                 String recipient = input.nextLine();
 
-                Message message = new Message(
-                        nextMessageNumber, recipient, "");
-
-                if (!message.checkRecipientCell()) {
-                    System.out.println("Invalid recipient number.");
-                    continue;
+               if (!recipient.startsWith("+")
+        || !recipient.substring(1).matches("[0-9]{8,15}")) {
+    System.out.println("Invalid recipient number.");
+    continue;
                 }
                   System.out.print("Enter your message (maximum 250 characters): ");
                 String messageText = input.nextLine();
 
-                message = new Message(
+                Message message = new Message(
                         nextMessageNumber, recipient, messageText);
 
                 if (!message.checkMessageID()) {
