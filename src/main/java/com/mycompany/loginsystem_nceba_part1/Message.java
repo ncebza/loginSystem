@@ -89,4 +89,11 @@ public class Message {
         }
         return "Invalid message option";
     }
+    public String printMessages(){
+        StringBuilder output = new StringBuilder();
+        for (Message message : SENT_MESSAGES){
+            output.append("Message ID").append (message.messageID).append("\n");
+            output.append("Message: ").append(message.messageText).append("\n\n");
+        }
+    }
 }
