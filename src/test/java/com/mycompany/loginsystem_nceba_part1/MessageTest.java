@@ -61,5 +61,13 @@ public class MessageTest {
 
         assertTrue(hash.matches("[0-9]{2}:1:HITHERE"));
     }
- 
+ @Test
+    public void testSendMessage() {
+        Message message = new Message(
+                1, "+27812345678", "Hello there");
+
+        assertEquals(
+                "Message successfully sent.",
+                message.SentMessage(1));
+    }
 }
