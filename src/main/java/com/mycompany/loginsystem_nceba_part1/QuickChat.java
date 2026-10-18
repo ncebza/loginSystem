@@ -56,6 +56,11 @@ public class QuickChat {
                 if (!message.checkMessageID()) {
                     System.out.println("Invalid message ID.");
                     continue;
+                }
+                 if (!message.checkMessageLength()) {
+                    System.out.println("Please enter a message of 250 characters or less.");
+                    continue;
+                }
 }
 
-              
+                     
