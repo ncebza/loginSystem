@@ -104,12 +104,10 @@ public class QuickChat {
             } else if (option.equals("2")) {
                 System.out.println("Coming Soon.");
 
-            } else if (option.equals("3")) {
-                System.out.println("Total messages sent: "
-                        + new Message(0, "+27786074306", "temporary")
-                                .returnTotalMessagess());
-                System.out.println("Goodbye.");
-                break;
+            }  else if (option.equals("3")) {
+    System.out.println("Total messages sent: " + totalMessagesSent);
+    System.out.println("Goodbye.");
+    break;
 
             } else {
                 System.out.println("Invalid option. Please choose 1, 2 or 3.");
