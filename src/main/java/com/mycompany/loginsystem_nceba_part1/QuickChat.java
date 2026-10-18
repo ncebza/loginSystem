@@ -94,7 +94,36 @@ public class QuickChat {
                     System.out.println("Recipient: " + message.getRecipient());
                     System.out.println("Message: " + message.getMessageText());
                 }
-  
+    messagesCreated++;
+                nextMessageNumber++;
+
+            } else if (option.equals("2")) {
+                System.out.println("Coming Soon.");
+
+            } else if (option.equals("3")) {
+                System.out.println("Total messages sent: "
+                        + new Message(0, "+27786074306", "temporary")
+                                .returnTotalMessagess());
+                System.out.println("Goodbye.");
+                break;
+
+            } else {
+                System.out.println("Invalid option. Please choose 1, 2 or 3.");
+            }
+        }
+    }
+
+    private int readPositiveNumber(String prompt) {
+        while (true) {
+            System.out.print(prompt);
+            String answer = input.nextLine();
+
+            try {
+                int number = Integer.parseInt(answer);
+
+                if (number > 0) {
+                    return number;
+                }
 }
 
                      
