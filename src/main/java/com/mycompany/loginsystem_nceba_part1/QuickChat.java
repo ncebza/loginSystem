@@ -37,4 +37,17 @@ public class QuickChat {
                     System.out.println("You have reached your message limit.");
                     continue;
                 }
+                System.out.print("Enter recipient number with international code: ");
+                String recipient = input.nextLine();
+
+                Message message = new Message(
+                        nextMessageNumber, recipient, "");
+
+                if (!message.checkRecipientCell()) {
+                    System.out.println("Invalid recipient number.");
+                    continue;
+                }
+                
 }
+
+              
