@@ -13,4 +13,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class MessageTest {
     
+   @Test
+    public void testCheckMessageID() {
+        Message message = new Message(
+                1, "+27812345678", "Hello there");
+
+        assertTrue(message.checkMessageID());
+        assertEquals(10, message.getMessageID().length());
+    }  
 }
