@@ -137,5 +137,8 @@ public class Message {
     }
     public String getRecipient() {
         return recipient;
-    }    
+    } 
+   public String getMessageText() {
+        return messageText;
+    } 
 }
