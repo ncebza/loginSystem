@@ -122,3 +122,17 @@ public class Message {
         if (text == null) {
             return ""; 
 }
+          return text.replace("\\", "\\\\")
+                .replace("\"", "\\\"")
+                .replace("\n", "\\n")
+                .replace("\r", "\\r")
+                .replace("\t", "\\t");
+            }
+
+    public String getMessageID() {
+        return messageID;
+    }
+      public int getMessageNumber() {
+        return messageNumber;
+    }
+}
