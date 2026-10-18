@@ -36,4 +36,11 @@ public class MessageTest {
 
         assertFalse(message.checkRecipientCell());
     }
+   @Test
+    public void testCheckMessageLengthSuccess() {
+        Message message = new Message(
+                1, "+27812345678", "Hello there");
+
+        assertTrue(message.checkMessageLength());
+    } 
 }
