@@ -47,7 +47,15 @@ public class QuickChat {
                     System.out.println("Invalid recipient number.");
                     continue;
                 }
-                
+                  System.out.print("Enter your message (maximum 250 characters): ");
+                String messageText = input.nextLine();
+
+                message = new Message(
+                        nextMessageNumber, recipient, messageText);
+
+                if (!message.checkMessageID()) {
+                    System.out.println("Invalid message ID.");
+                    continue;
 }
 
               
