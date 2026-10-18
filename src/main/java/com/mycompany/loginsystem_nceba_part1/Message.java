@@ -141,4 +141,7 @@ public class Message {
    public String getMessageText() {
         return messageText;
     } 
+   public String getMessageHash() {
+        return messageHash;
+    }
 }
