@@ -51,7 +51,7 @@ public class QuickChat {
 
                 case "3":
                     System.out.println("Total messages sent: "
-                            + Message.returnTotalMessagess());
+                            + Message.returnTotalMessages());
                     System.out.println("Thank you for using QuickChat.");
                     running = false;
                     break;
