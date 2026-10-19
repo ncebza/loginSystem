@@ -84,7 +84,7 @@ public class MessageTest {
 
         assertEquals("Message successfully sent.", result);
         assertEquals("Sent", message.getMessageStatus());
-        assertEquals(1, Message.returnTotalMessagess());
+        assertEquals(1, Message.returnTotalMessages());
     }
 
     @Test
@@ -96,7 +96,7 @@ public class MessageTest {
 
         assertEquals("Message successfully stored.", result);
         assertEquals("Stored", message.getMessageStatus());
-        assertEquals(0, Message.returnTotalMessagess());
+        assertEquals(0, Message.returnTotalMessages());
     }
 
     @Test
@@ -108,7 +108,7 @@ public class MessageTest {
 
         assertEquals("Press 0 to delete the message.", result);
         assertEquals("Disregarded", message.getMessageStatus());
-        assertEquals(0, Message.returnTotalMessagess());
+        assertEquals(0, Message.returnTotalMessages());
     }
 
     @Test
