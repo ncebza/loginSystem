@@ -61,3 +61,22 @@ public class QuickChat {
             }
         }
     }
+  private int readPositiveNumber() {
+        while (true) {
+            System.out.print("How many messages would you like to send? ");
+            String answer = input.nextLine();
+
+            try {
+                int number = Integer.parseInt(answer);
+
+                if (number > 0) {
+                    return number;
+                }
+
+                System.out.println("Enter a number greater than zero.");
+
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a valid whole number.");
+            }
+        }
+    }
