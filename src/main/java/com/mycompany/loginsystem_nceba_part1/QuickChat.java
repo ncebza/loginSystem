@@ -89,9 +89,7 @@ public class QuickChat {
                         "Enter recipient number with country code: ");
                 recipient = input.nextLine();
 
-                if (recipient.matches("\\+[0-9]{8,15}")) {
-                    break;
-                }
+                
 
                 System.out.println("Invalid recipient number. Try again.");
             }
