@@ -89,7 +89,9 @@ public class QuickChat {
                         "Enter recipient number with country code: ");
                 recipient = input.nextLine();
 
-                
+                if (recipient.matches("^\\+27[0-9]{9}$")) {
+    break;
+}
                 System.out.println("Invalid recipient number. Try again.");
             }
 
