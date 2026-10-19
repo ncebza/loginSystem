@@ -137,8 +137,8 @@ public class QuickChat {
             }
 
             if (message.getMessageStatus().equals("Sent")) {
-                message.printMessages();
-            }
+    System.out.println(message.printMessages());
+}
 
             if (messagesProcessed >= numberOfMessages) {
                 System.out.println(
