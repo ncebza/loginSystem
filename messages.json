@@ -1,7 +1,10 @@
-{
- "messageID": "4507299381",
- "messageNumber": 0,
- "recipient": "+27786074306",
- "messageText": "hello boy",
- "messageHash": "45:0:HELLOBOY"
-}
+[
+ {
+ "messageID": "2463406407",
+ "messageNumber": 1,
+ "recipient": "+27812345678",
+ "messageText": "Hello world",
+ "messageHash": "24:1:HELLOWORLD",
+ "messageStatus": "Stored"
+ }
+]
