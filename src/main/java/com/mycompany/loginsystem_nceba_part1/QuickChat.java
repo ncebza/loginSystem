@@ -106,7 +106,7 @@ public class QuickChat {
                     break;
                 }
 
-                System.out.println("Your message is too long.");
+                System.out.println("Please enter a message of less than 250 characters.");
             }
 
             Message message = new Message(
