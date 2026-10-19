@@ -84,24 +84,24 @@ public class Message {
                 + firstWord + lastWord).toUpperCase();
     }
 
-    public String SentMessage(int choice) {
-        if (choice == 1) {
-            messageStatus = "Sent";
-            sentMessages.add(this);
-            return "Message successfully sent.";
-        } else if (choice == 2) {
-            messageStatus = "Stored";
-            storedMessages.add(this);
-            storeMessage();
-            return "Message successfully stored.";
-        } else if (choice == 3) {
-            messageStatus = "Disregarded";
-            disregardedMessages.add(this);
-            return "Press 0 to delete the message.";
-        } else {
-            return "Invalid choice.";
-        }
+   public String SentMessage(int choice) {
+    if (choice == 1) {
+        messageStatus = "Sent";
+        sentMessages.add(this);
+        return "Message successfully sent.";
+    } else if (choice == 2) {
+        messageStatus = "Disregarded";
+        disregardedMessages.add(this);
+        return "Press 0 to delete the message.";
+    } else if (choice == 3) {
+        messageStatus = "Stored";
+        storedMessages.add(this);
+        storeMessage();
+        return "Message successfully stored.";
+    } else {
+        return "Invalid choice.";
     }
+}
 
     public String printMessages() {
     return "Message ID: " + messageID + "\n"
