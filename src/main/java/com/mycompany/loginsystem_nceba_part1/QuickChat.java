@@ -116,8 +116,8 @@ public class QuickChat {
             System.out.println("Message Hash: " + message.getMessageHash());
 
             System.out.println("1. Send message");
-            System.out.println("2. Store message");
-            System.out.println("3. Disregard message");
+            System.out.println("2. Disregard messages");
+            System.out.println("3. Store Messages");
             System.out.print("Choose an option: ");
 
             String answer = input.nextLine();
