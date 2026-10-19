@@ -103,12 +103,7 @@ public class Message {
         }
     }
 
-    public void printMessages() {
-        System.out.println("Message ID: " + messageID);
-        System.out.println("Message Hash: " + messageHash);
-        System.out.println("Recipient: " + recipient);
-        System.out.println("Message: " + messageText);
-    }
+    
 
     public static int returnTotalMessages() {
         return sentMessages.size();
