@@ -154,13 +154,7 @@ public class QuickChat {
                     || choice < 1 || choice > 3) {
                 break;
             }
-
-            System.out.print("Process the next message? (yes/no): ");
-            String answerNext = input.nextLine();
-
-            if (!answerNext.equalsIgnoreCase("yes")) {
-                break;
-            }
+  
         }
     }
 }
