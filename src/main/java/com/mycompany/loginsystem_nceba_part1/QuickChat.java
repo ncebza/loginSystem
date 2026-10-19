@@ -80,3 +80,52 @@ public class QuickChat {
             }
         }
     }
+     private void sendMessages() {
+        while (messagesProcessed < numberOfMessages) {
+            String recipient;
+
+            while (true) {
+                System.out.print(
+                        "Enter recipient number with country code: ");
+                recipient = input.nextLine();
+
+                if (recipient.matches("\\+[0-9]{8,15}")) {
+                    break;
+                }
+
+                System.out.println("Invalid recipient number. Try again.");
+            }
+
+            String messageText;
+
+            while (true) {
+                System.out.print(
+                        "Enter your message (maximum 250 characters): ");
+                messageText = input.nextLine();
+
+                if (messageText.length() <= 250) {
+                    break;
+                }
+
+                System.out.println("Your message is too long.");
+            }
+
+            Message message = new Message(
+                    nextMessageNumber, recipient, messageText);
+
+            System.out.println("Message ID: " + message.getMessageID());
+            System.out.println("Message Hash: " + message.getMessageHash());
+
+            System.out.println("1. Send message");
+            System.out.println("2. Store message");
+            System.out.println("3. Disregard message");
+            System.out.print("Choose an option: ");
+
+            String answer = input.nextLine();
+            int choice;
+
+            try {
+                choice = Integer.parseInt(answer);
+            } catch (NumberFormatException e) {
+                choice = 0;
+            }
