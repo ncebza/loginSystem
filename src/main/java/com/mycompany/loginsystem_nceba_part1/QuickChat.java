@@ -90,7 +90,6 @@ public class QuickChat {
                 recipient = input.nextLine();
 
                 
-
                 System.out.println("Invalid recipient number. Try again.");
             }
 
