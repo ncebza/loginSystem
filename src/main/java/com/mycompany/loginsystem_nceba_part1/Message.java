@@ -56,7 +56,7 @@ public class Message {
 
     public boolean checkRecipientCell() {
         if (recipient == null
-                || !recipient.matches("[0-9]{10}")) {
+                || !recipient.matches("\\+[0-9]{10}")) {
             return false;
         }
 
