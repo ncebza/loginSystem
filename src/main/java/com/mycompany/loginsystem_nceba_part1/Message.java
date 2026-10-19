@@ -103,7 +103,13 @@ public class Message {
         }
     }
 
-    
+    public String printMessages() {
+    return "Message ID: " + messageID + "\n"
+            + "Message Hash: " + messageHash + "\n"
+            + "Recipient: " + recipient + "\n"
+            + "Message: " + messageText;
+}
+
 
     public static int returnTotalMessages() {
         return sentMessages.size();
