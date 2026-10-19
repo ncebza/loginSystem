@@ -110,7 +110,7 @@ public class Message {
         System.out.println("Message: " + messageText);
     }
 
-    public static int returnTotalMessagess() {
+    public static int returnTotalMessages() {
         return sentMessages.size();
     }
 
