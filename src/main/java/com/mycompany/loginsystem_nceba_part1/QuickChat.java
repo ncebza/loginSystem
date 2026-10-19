@@ -129,3 +129,39 @@ public class QuickChat {
             } catch (NumberFormatException e) {
                 choice = 0;
             }
+         String result = message.SentMessage(choice);
+            System.out.println(result);
+
+            if (choice >= 1 && choice <= 3) {
+                messagesProcessed++;
+                nextMessageNumber++;
+            }
+
+            if (message.getMessageStatus().equals("Sent")) {
+                message.printMessages();
+            }
+
+            if (messagesProcessed >= numberOfMessages) {
+                System.out.println(
+                        "You have processed all your selected messages.");
+            }
+
+            if (choice < 1 || choice > 3) {
+                System.out.println("Please enter 1, 2, or 3.");
+            }
+
+            if (messagesProcessed >= numberOfMessages
+                    || choice < 1 || choice > 3) {
+                break;
+            }
+
+            System.out.print("Process the next message? (yes/no): ");
+            String answerNext = input.nextLine();
+
+            if (!answerNext.equalsIgnoreCase("yes")) {
+                break;
+            }
+        }
+    }
+}
+   
