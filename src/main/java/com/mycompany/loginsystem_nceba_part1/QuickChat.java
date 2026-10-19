@@ -51,7 +51,7 @@ public class QuickChat {
 
                 case "3":
                     System.out.println("Total messages sent: "
-                            + Message.returnTotalMessagess());
+                            + Message.returnTotalMessages());
                     System.out.println("Thank you for using QuickChat.");
                     running = false;
                     break;
@@ -89,10 +89,9 @@ public class QuickChat {
                         "Enter recipient number with country code: ");
                 recipient = input.nextLine();
 
-                if (recipient.matches("\\+[0-9]{8,15}")) {
-                    break;
-                }
-
+                if (recipient.matches("^\\+27[0-9]{9}$")) {
+    break;
+}
                 System.out.println("Invalid recipient number. Try again.");
             }
 
@@ -107,7 +106,7 @@ public class QuickChat {
                     break;
                 }
 
-                System.out.println("Your message is too long.");
+                System.out.println("Please enter a message of less than 250 characters.");
             }
 
             Message message = new Message(
@@ -138,8 +137,8 @@ public class QuickChat {
             }
 
             if (message.getMessageStatus().equals("Sent")) {
-                message.printMessages();
-            }
+    System.out.println(message.printMessages());
+}
 
             if (messagesProcessed >= numberOfMessages) {
                 System.out.println(
@@ -154,13 +153,7 @@ public class QuickChat {
                     || choice < 1 || choice > 3) {
                 break;
             }
-
-            System.out.print("Process the next message? (yes/no): ");
-            String answerNext = input.nextLine();
-
-            if (!answerNext.equalsIgnoreCase("yes")) {
-                break;
-            }
+  
         }
     }
 }
