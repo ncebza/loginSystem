@@ -123,4 +123,18 @@ private static final String FILE_NAME = "messages.json";
 
                 storedMessageHashes[storedCount] =
                         getStringValue(message, "messageHash");
+ storedSenders[storedCount] =
+                        getStringValue(message, "sender");
+
+                if (storedSenders[storedCount].isEmpty()) {
+                    storedSenders[storedCount] = "Developer";
+                }
+
+                if (message.has("messageNumber")) {
+                    storedMessageNumbers[storedCount] =
+                            message.get("messageNumber").getAsInt();
+                } else {
+                    storedMessageNumbers[storedCount] = 0;
+                }
+               
 }
