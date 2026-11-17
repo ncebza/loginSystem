@@ -288,5 +288,9 @@ private static final String FILE_NAME = "messages.json";
                 break;
             }
         }
+     if (!found) {
+            System.out.println("Message ID not found.");
+        }
+    }
 
 }
