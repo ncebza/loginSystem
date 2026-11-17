@@ -62,4 +62,23 @@ private static final String FILE_NAME = "messages.json";
             System.out.println("0. Return to main menu");
             System.out.print("Enter your choice: ");
 
+             choice = input.nextLine();
+
+            switch (choice) {
+
+                case "1":
+                    displaySenderAndRecipient();
+                    break;
+
+                case "2":
+                    displayLongestMessage();
+                    break;
+
+                case "3":
+                    searchMessageID(input);
+                    break;
+
+                case "4":
+                    searchRecipient(input);
+                    break;
 }
