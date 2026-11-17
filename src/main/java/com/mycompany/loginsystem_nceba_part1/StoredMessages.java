@@ -156,5 +156,22 @@ private static final String FILE_NAME = "messages.json";
         }
 
         return "";
-    }           
+    }  
+  // Add a message ID to the Message ID array
+    private static void addMessageID(String messageID) {
+
+        if (messageID == null || messageID.isEmpty()) {
+            return;
+        }
+
+        for (int i = 0; i < messageIDCount; i++) {
+            if (messageIDs[i].equals(messageID)) {
+                return;
+            }
+        }
+      if (messageIDCount < messageIDs.length) {
+            messageIDs[messageIDCount] = messageID;
+            messageIDCount++;
+        }
+    }   
 }
