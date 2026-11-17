@@ -292,5 +292,22 @@ private static final String FILE_NAME = "messages.json";
             System.out.println("Message ID not found.");
         }
     }
+  // Option 4: Search messages using recipient
+    public void searchRecipient(Scanner input) {
 
+        System.out.print("Enter the recipient number: ");
+        String searchNumber = input.nextLine();
+
+        boolean found = false;
+
+        System.out.println("\n===== MESSAGES FOR RECIPIENT =====");
+
+        for (int i = 0; i < storedCount; i++) {
+
+            if (storedRecipients[i].equals(searchNumber)) {
+
+                System.out.println("Message: " + storedMessageTexts[i]);
+                found = true;
+            }
+        }
 }
