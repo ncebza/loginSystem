@@ -337,5 +337,15 @@ private static final String FILE_NAME = "messages.json";
                     storedSenders[j] = storedSenders[j + 1];
                     storedMessageNumbers[j] = storedMessageNumbers[j + 1];
                 }
- 
+  storedCount--;
+
+                saveStoredMessages();
+
+                System.out.println("Message: \"" + deletedMessage
+                        + "\" successfully deleted.");
+
+                found = true;
+                break;
+            }
+        }
 }
