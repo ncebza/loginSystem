@@ -43,5 +43,10 @@ private static String[] messageIDs = new String[100];
     private static int storedCount = 0;
  
 private static final String FILE_NAME = "messages.json";
-    
+
+  // Main menu for stored messages
+    public void displayStoredMessagesMenu(Scanner input) {
+
+        loadStoredMessages();
+
 }
