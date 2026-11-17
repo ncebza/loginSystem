@@ -393,4 +393,15 @@ private static final String FILE_NAME = "messages.json";
 
             messages.add(message);
         }
-}
+         Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+        try (FileWriter writer = new FileWriter(FILE_NAME)) {
+
+            gson.toJson(messages, writer);
+
+        } catch (IOException e) {
+            System.out.println("Error saving stored messages.");
+        }
+    }
+}    
+
