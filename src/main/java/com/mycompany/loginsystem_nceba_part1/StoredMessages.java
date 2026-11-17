@@ -247,5 +247,23 @@ private static final String FILE_NAME = "messages.json";
             System.out.println("----------------------------");
         }
     }
-  
+    // Option 2: Display the longest stored message
+    public void displayLongestMessage() {
+
+        if (storedCount == 0) {
+            System.out.println("There are no stored messages.");
+            return;
+        }
+
+        int longestIndex = 0;
+
+        for (int i = 1; i < storedCount; i++) {
+
+            if (storedMessageTexts[i].length()
+                    > storedMessageTexts[longestIndex].length()) {
+
+                longestIndex = i;
+            }
+        }
+
 }
