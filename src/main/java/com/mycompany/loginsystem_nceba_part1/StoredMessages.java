@@ -374,4 +374,23 @@ private static final String FILE_NAME = "messages.json";
             System.out.println("--------------------------------------------");
         }
     }
+     // Save the stored message arrays back into the JSON file
+    private static void saveStoredMessages() {
+
+        JsonArray messages = new JsonArray();
+
+        for (int i = 0; i < storedCount; i++) {
+
+            JsonObject message = new JsonObject();
+
+            message.addProperty("messageID", storedMessageIDs[i]);
+            message.addProperty("messageNumber", storedMessageNumbers[i]);
+            message.addProperty("recipient", storedRecipients[i]);
+            message.addProperty("messageText", storedMessageTexts[i]);
+            message.addProperty("messageHash", storedMessageHashes[i]);
+            message.addProperty("sender", storedSenders[i]);
+            message.addProperty("messageStatus", "Stored");
+
+            messages.add(message);
+        }
 }
