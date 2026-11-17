@@ -230,4 +230,22 @@ private static final String FILE_NAME = "messages.json";
             saveStoredMessages();
         }
     }
+    // Option 1: Display sender and recipient
+    public void displaySenderAndRecipient() {
+
+        if (storedCount == 0) {
+            System.out.println("There are no stored messages.");
+            return;
+        }
+
+        System.out.println("\n===== SENDERS AND RECIPIENTS =====");
+
+        for (int i = 0; i < storedCount; i++) {
+
+            System.out.println("Sender: " + storedSenders[i]);
+            System.out.println("Recipient: " + storedRecipients[i]);
+            System.out.println("----------------------------");
+        }
+    }
+  
 }
