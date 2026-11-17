@@ -265,5 +265,8 @@ private static final String FILE_NAME = "messages.json";
                 longestIndex = i;
             }
         }
+ System.out.println("\n===== LONGEST STORED MESSAGE =====");
+        System.out.println(storedMessageTexts[longestIndex]);
+    }
 
 }
