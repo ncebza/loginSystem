@@ -348,4 +348,17 @@ private static final String FILE_NAME = "messages.json";
                 break;
             }
         }
+           if (!found) {
+            System.out.println("Message Hash not found.");
+        }
+    }
+
+    // Option 6: Display a full report
+    public void displayReport() {
+
+        if (storedCount == 0) {
+            System.out.println("There are no stored messages.");
+            return;
+        }
+
 }
