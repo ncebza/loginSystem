@@ -173,5 +173,11 @@ private static final String FILE_NAME = "messages.json";
             messageIDs[messageIDCount] = messageID;
             messageIDCount++;
         }
-    }   
+    } 
+      // Add a message hash to the Message Hash array
+    private static void addMessageHash(String messageHash) {
+
+        if (messageHash == null || messageHash.isEmpty()) {
+            return;
+        }
 }
