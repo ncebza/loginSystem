@@ -310,4 +310,8 @@ private static final String FILE_NAME = "messages.json";
                 found = true;
             }
         }
+          if (!found) {
+            System.out.println("No messages found for this recipient.");
+        }
+    }
 }
