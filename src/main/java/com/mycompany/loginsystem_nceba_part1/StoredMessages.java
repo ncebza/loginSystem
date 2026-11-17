@@ -35,5 +35,11 @@ private static String[] messageIDs = new String[100];
     private static String[] storedMessageHashes = new String[100];
     private static String[] storedSenders = new String[100];
     private static int[] storedMessageNumbers = new int[100];
-    
+  
+ private static int sentCount = 0;
+    private static int disregardedCount = 0;
+    private static int messageIDCount = 0;
+    private static int messageHashCount = 0;
+    private static int storedCount = 0;
+   
 }
