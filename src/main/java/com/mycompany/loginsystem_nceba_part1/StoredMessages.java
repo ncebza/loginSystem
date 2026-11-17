@@ -268,5 +268,25 @@ private static final String FILE_NAME = "messages.json";
  System.out.println("\n===== LONGEST STORED MESSAGE =====");
         System.out.println(storedMessageTexts[longestIndex]);
     }
+ // Option 3: Search using Message ID
+    public void searchMessageID(Scanner input) {
+
+        System.out.print("Enter the Message ID: ");
+        String searchID = input.nextLine();
+
+        boolean found = false;
+
+        for (int i = 0; i < storedCount; i++) {
+
+            if (storedMessageIDs[i].equals(searchID)) {
+
+                System.out.println("\nMessage found!");
+                System.out.println("Recipient: " + storedRecipients[i]);
+                System.out.println("Message: " + storedMessageTexts[i]);
+
+                found = true;
+                break;
+            }
+        }
 
 }
