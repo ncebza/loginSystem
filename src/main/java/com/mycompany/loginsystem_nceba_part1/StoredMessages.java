@@ -81,4 +81,24 @@ private static final String FILE_NAME = "messages.json";
                 case "4":
                     searchRecipient(input);
                     break;
+                    
+                    case "5":
+                    deleteMessage(input);
+                    break;
+
+                case "6":
+                    displayReport();
+                    break;
+
+                case "0":
+                    System.out.println("Returning to main menu...");
+                    break;
+
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+
+        } while (!choice.equals("0"));
+    }
+
 }
