@@ -148,5 +148,13 @@ private static final String FILE_NAME = "messages.json";
             System.out.println("There was a problem reading the stored messages.");
         }
     }
-             
+  // Get a value from the JSON file safely
+    private static String getStringValue(JsonObject message, String field) {
+
+        if (message.has(field) && !message.get(field).isJsonNull()) {
+            return message.get(field).getAsString();
+        }
+
+        return "";
+    }           
 }
