@@ -112,4 +112,15 @@ private static final String FILE_NAME = "messages.json";
             for (int i = 0; i < messages.size() && storedCount < 100; i++) {
 
                 JsonObject message = messages.get(i).getAsJsonObject();
+                storedMessageIDs[storedCount] =
+                        getStringValue(message, "messageID");
+
+                storedRecipients[storedCount] =
+                        getStringValue(message, "recipient");
+
+                storedMessageTexts[storedCount] =
+                        getStringValue(message, "messageText");
+
+                storedMessageHashes[storedCount] =
+                        getStringValue(message, "messageHash");
 }
