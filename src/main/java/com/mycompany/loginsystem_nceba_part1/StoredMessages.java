@@ -314,4 +314,28 @@ private static final String FILE_NAME = "messages.json";
             System.out.println("No messages found for this recipient.");
         }
     }
+     // Option 5: Delete a message using its Message Hash
+    public void deleteMessage(Scanner input) {
+
+        System.out.print("Enter the Message Hash: ");
+        String searchHash = input.nextLine();
+
+        boolean found = false;
+
+        for (int i = 0; i < storedCount; i++) {
+
+            if (storedMessageHashes[i].equals(searchHash)) {
+
+                String deletedMessage = storedMessageTexts[i];
+
+                for (int j = i; j < storedCount - 1; j++) {
+
+                    storedMessageIDs[j] = storedMessageIDs[j + 1];
+                    storedRecipients[j] = storedRecipients[j + 1];
+                    storedMessageTexts[j] = storedMessageTexts[j + 1];
+                    storedMessageHashes[j] = storedMessageHashes[j + 1];
+                    storedSenders[j] = storedSenders[j + 1];
+                    storedMessageNumbers[j] = storedMessageNumbers[j + 1];
+                }
+ 
 }
