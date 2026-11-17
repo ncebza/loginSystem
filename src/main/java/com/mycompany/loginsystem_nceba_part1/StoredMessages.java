@@ -136,5 +136,17 @@ private static final String FILE_NAME = "messages.json";
                 } else {
                     storedMessageNumbers[storedCount] = 0;
                 }
-               
+  addMessageID(storedMessageIDs[storedCount]);
+                addMessageHash(storedMessageHashes[storedCount]);
+
+                storedCount++;
+            }
+
+        } catch (IOException e) {
+            System.out.println("Could not read the messages.json file.");
+        } catch (Exception e) {
+            System.out.println("There was a problem reading the stored messages.");
+        }
+    }
+             
 }
