@@ -211,5 +211,23 @@ private static final String FILE_NAME = "messages.json";
         addMessageID(message.getMessageID());
         addMessageHash(message.getMessageHash());
     }
-   
+     public static void addStoredMessage(Message message) {
+
+        if (storedCount < 100) {
+
+            storedMessageIDs[storedCount] = message.getMessageID();
+            storedRecipients[storedCount] = message.getRecipient();
+            storedMessageTexts[storedCount] = message.getMessageText();
+            storedMessageHashes[storedCount] = message.getMessageHash();
+            storedSenders[storedCount] = "Developer";
+            storedMessageNumbers[storedCount] = message.getMessageNumber();
+
+            storedCount++;
+
+            addMessageID(message.getMessageID());
+            addMessageHash(message.getMessageHash());
+
+            saveStoredMessages();
+        }
+    }
 }
