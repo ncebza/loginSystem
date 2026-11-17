@@ -180,4 +180,9 @@ private static final String FILE_NAME = "messages.json";
         if (messageHash == null || messageHash.isEmpty()) {
             return;
         }
+         for (int i = 0; i < messageHashCount; i++) {
+            if (messageHashes[i].equals(messageHash)) {
+                return;
+            }
+        }
 }
