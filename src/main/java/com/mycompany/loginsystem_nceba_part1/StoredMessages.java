@@ -201,5 +201,15 @@ private static final String FILE_NAME = "messages.json";
  addMessageID(message.getMessageID());
         addMessageHash(message.getMessageHash());
     }
-      
+   public static void addDisregardedMessage(Message message) {
+
+        if (disregardedCount < disregardedMessages.length) {
+            disregardedMessages[disregardedCount] = message;
+            disregardedCount++;
+        }
+
+        addMessageID(message.getMessageID());
+        addMessageHash(message.getMessageHash());
+    }
+   
 }
