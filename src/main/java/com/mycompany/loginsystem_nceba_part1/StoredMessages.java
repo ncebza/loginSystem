@@ -198,5 +198,8 @@ private static final String FILE_NAME = "messages.json";
             sentMessages[sentCount] = message;
             sentCount++;
         }
-       
+ addMessageID(message.getMessageID());
+        addMessageHash(message.getMessageHash());
+    }
+      
 }
