@@ -41,5 +41,7 @@ private static String[] messageIDs = new String[100];
     private static int messageIDCount = 0;
     private static int messageHashCount = 0;
     private static int storedCount = 0;
-   
+ 
+private static final String FILE_NAME = "messages.json";
+    
 }
