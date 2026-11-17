@@ -49,4 +49,17 @@ private static final String FILE_NAME = "messages.json";
 
         loadStoredMessages();
 
+         String choice;
+
+        do {
+            System.out.println("\n===== STORED MESSAGES =====");
+            System.out.println("1. Display sender and recipient");
+            System.out.println("2. Display longest stored message");
+            System.out.println("3. Search message using Message ID");
+            System.out.println("4. Search messages using recipient");
+            System.out.println("5. Delete message using Message Hash");
+            System.out.println("6. Display stored messages report");
+            System.out.println("0. Return to main menu");
+            System.out.print("Enter your choice: ");
+
 }
