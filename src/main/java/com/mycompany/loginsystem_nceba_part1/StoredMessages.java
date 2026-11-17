@@ -100,5 +100,16 @@ private static final String FILE_NAME = "messages.json";
 
         } while (!choice.equals("0"));
     }
+// Read stored messages from the JSON file into arrays
+    public static void loadStoredMessages() {
 
+        storedCount = 0;
+
+        try (FileReader reader = new FileReader(FILE_NAME)) {
+
+            JsonArray messages = JsonParser.parseReader(reader).getAsJsonArray();
+
+            for (int i = 0; i < messages.size() && storedCount < 100; i++) {
+
+                JsonObject message = messages.get(i).getAsJsonObject();
 }
