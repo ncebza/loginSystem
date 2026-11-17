@@ -24,5 +24,8 @@ public class StoredMessages {
  // Arrays required for Part 3
     private static Message[] sentMessages = new Message[100];
     private static Message[] disregardedMessages = new Message[100];
-      
+  
+private static String[] messageIDs = new String[100];
+    private static String[] messageHashes = new String[100];
+    
 }
