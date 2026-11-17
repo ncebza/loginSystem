@@ -360,5 +360,18 @@ private static final String FILE_NAME = "messages.json";
             System.out.println("There are no stored messages.");
             return;
         }
+   System.out.println("\n========== STORED MESSAGES REPORT ==========");
 
+        for (int i = 0; i < storedCount; i++) {
+
+            System.out.println("\nMessage Number: " + storedMessageNumbers[i]);
+            System.out.println("Message ID: " + storedMessageIDs[i]);
+            System.out.println("Message Hash: " + storedMessageHashes[i]);
+            System.out.println("Sender: " + storedSenders[i]);
+            System.out.println("Recipient: " + storedRecipients[i]);
+            System.out.println("Message: " + storedMessageTexts[i]);
+            System.out.println("Status: Stored");
+            System.out.println("--------------------------------------------");
+        }
+    }
 }
