@@ -27,5 +27,13 @@ public class StoredMessages {
   
 private static String[] messageIDs = new String[100];
     private static String[] messageHashes = new String[100];
+
+// Arrays for messages read from the JSON file
+    private static String[] storedMessageIDs = new String[100];
+    private static String[] storedRecipients = new String[100];
+    private static String[] storedMessageTexts = new String[100];
+    private static String[] storedMessageHashes = new String[100];
+    private static String[] storedSenders = new String[100];
+    private static int[] storedMessageNumbers = new int[100];
     
 }
