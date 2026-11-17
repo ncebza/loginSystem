@@ -185,4 +185,18 @@ private static final String FILE_NAME = "messages.json";
                 return;
             }
         }
+     if (messageHashCount < messageHashes.length) {
+            messageHashes[messageHashCount] = messageHash;
+            messageHashCount++;
+        }
+    }
+
+    // These methods will connect Message.java to the Part 3 arrays
+    public static void addSentMessage(Message message) {
+
+        if (sentCount < sentMessages.length) {
+            sentMessages[sentCount] = message;
+            sentCount++;
+        }
+       
 }
