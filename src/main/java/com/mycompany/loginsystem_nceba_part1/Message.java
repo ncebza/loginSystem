@@ -8,8 +8,6 @@ package com.mycompany.loginsystem_nceba_part1;
  *
  * @author Student
  */
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
