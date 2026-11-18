@@ -87,27 +87,29 @@ public class Message {
 
  public String SentMessage(int choice) {
     switch (choice) {
+
         case 1:
             messageStatus = "Sent";
             sentMessages.add(this);
+            StoredMessages.addSentMessage(this);
             return "Message successfully sent.";
 
         case 2:
             messageStatus = "Disregarded";
             disregardedMessages.add(this);
+            StoredMessages.addDisregardedMessage(this);
             return "Press 0 to delete the message.";
 
         case 3:
             messageStatus = "Stored";
             storedMessages.add(this);
-            storeMessage();
+            StoredMessages.addStoredMessage(this);
             return "Message successfully stored.";
 
         default:
             return "Invalid choice.";
     }
 }
-
 
     public String printMessages() {
     return "Message ID: " + messageID + "\n"
