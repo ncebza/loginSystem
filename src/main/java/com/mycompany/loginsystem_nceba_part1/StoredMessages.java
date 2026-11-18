@@ -227,7 +227,7 @@ for (int i = 0; i < disregardedCount; i++) {
         addMessageHash(message.getMessageHash());
     }
      public static void addStoredMessage(Message message) {
-
+       loadStoredMessages();
         if (storedCount < 100) {
 
             storedMessageIDs[storedCount] = message.getMessageID();
