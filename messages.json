@@ -16,5 +16,23 @@
     "messageHash": "65:1:HELLOWORLD",
     "sender": "Developer",
     "messageStatus": "Stored"
+  },
+  {
+    "messageID": "2175630070",
+    "messageNumber": 1,
+    "recipient": "+27812345678",
+    "messageText": "Hello world",
+    "messageHash": "21:1:HELLOWORLD",
+    "sender": "Developer",
+    "messageStatus": "Stored"
+  },
+  {
+    "messageID": "8532531393",
+    "messageNumber": 1,
+    "recipient": "+27812345678",
+    "messageText": "Hello world",
+    "messageHash": "85:1:HELLOWORLD",
+    "sender": "Developer",
+    "messageStatus": "Stored"
   }
 ]
