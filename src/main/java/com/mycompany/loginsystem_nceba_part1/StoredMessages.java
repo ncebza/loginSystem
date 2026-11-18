@@ -420,5 +420,28 @@ saveStoredMessages();
             System.out.println("Error saving stored messages.");
         }
     }
+    private static void rebuildMessageDetails() {
+
+    messageIDCount = 0;
+    messageHashCount = 0;
+
+    for (int i = 0; i < sentCount; i++) {
+        addMessageID(sentMessages[i].getMessageID());
+        addMessageHash(sentMessages[i].getMessageHash());
+    }
+
+    for (int i = 0; i < disregardedCount; i++) {
+        addMessageID(disregardedMessages[i].getMessageID());
+        addMessageHash(disregardedMessages[i].getMessageHash());
+    }
+
+    for (int i = 0; i < storedCount; i++) {
+        addMessageID(storedMessageIDs[i]);
+        addMessageHash(storedMessageHashes[i]);
+    }
+}
+
+
+    
 }    
 
