@@ -31,6 +31,7 @@ public class QuickChat {
             System.out.println("1. Send Messages");
             System.out.println("2. Show recently sent messages");
             System.out.println("3. Quit");
+            System.out.println("4.Stored Messages");
 
             System.out.print("Choose an option: ");
             String option = input.nextLine();
@@ -55,6 +56,10 @@ public class QuickChat {
                     System.out.println("Thank you for using QuickChat.");
                     running = false;
                     break;
+                 case "4":
+                StoredMessages storedMessages = new StoredMessages();
+                storedMessages.displayStoredMessagesMenu(input);
+                break;   
 
                 default:
                     System.out.println("Invalid option. Please try again.");
@@ -81,8 +86,8 @@ public class QuickChat {
         }
     }
      private void sendMessages() {
-        while (messagesProcessed < numberOfMessages) {
-            String recipient;
+      for (int i = messagesProcessed; i < numberOfMessages; i++) {
+           String recipient;
 
             while (true) {
                 System.out.print(

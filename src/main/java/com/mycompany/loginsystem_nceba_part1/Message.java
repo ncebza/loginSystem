@@ -8,8 +8,6 @@ package com.mycompany.loginsystem_nceba_part1;
  *
  * @author Student
  */
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -35,6 +33,7 @@ public class Message {
         this.messageHash = createMessageHash();
         this.messageStatus = "";
     }
+    
     public String generateMessageID() {
         Random random = new Random();
         String newID;
@@ -86,27 +85,29 @@ public class Message {
 
  public String SentMessage(int choice) {
     switch (choice) {
+
         case 1:
             messageStatus = "Sent";
             sentMessages.add(this);
+            StoredMessages.addSentMessage(this);
             return "Message successfully sent.";
 
         case 2:
             messageStatus = "Disregarded";
             disregardedMessages.add(this);
+            StoredMessages.addDisregardedMessage(this);
             return "Press 0 to delete the message.";
 
         case 3:
             messageStatus = "Stored";
             storedMessages.add(this);
-            storeMessage();
+            StoredMessages.addStoredMessage(this);
             return "Message successfully stored.";
 
         default:
             return "Invalid choice.";
     }
 }
-
 
     public String printMessages() {
     return "Message ID: " + messageID + "\n"
@@ -120,53 +121,7 @@ public class Message {
         return sentMessages.size();
     }
 
-    public void storeMessage() {
-        try (FileWriter writer = new FileWriter("messages.json")) {
-            writer.write("[\n");
-
-            for (int i = 0; i < storedMessages.size(); i++) {
-                Message message = storedMessages.get(i);
-
-                writer.write(" {\n");
-                writer.write(" \"messageID\": \""
-                        + escapeJSON(message.messageID) + "\",\n");
-                writer.write(" \"messageNumber\": "
-                        + message.messageNumber + ",\n");
-                writer.write(" \"recipient\": \""
-                        + escapeJSON(message.recipient) + "\",\n");
-                writer.write(" \"messageText\": \""
-                        + escapeJSON(message.messageText) + "\",\n");
-                writer.write(" \"messageHash\": \""
-                        + escapeJSON(message.messageHash) + "\",\n");
-                writer.write(" \"messageStatus\": \"Stored\"\n");
-                writer.write(" }");
-
-                if (i < storedMessages.size() - 1) {
-                    writer.write(",");
-                }
-
-                writer.write("\n");
-            }
-
-            writer.write("]\n");
-
-        } catch (IOException e) {
-            System.out.println("Error storing message.");
-        }
-    }
-
-    private String escapeJSON(String text) {
-        if (text == null) {
-            return "";
-        }
-
-        return text.replace("\\", "\\\\")
-                .replace("\"", "\\\"")
-                .replace("\n", "\\n")
-                .replace("\r", "\\r")
-                .replace("\t", "\\t");
-    }
-
+  
     public String getMessageID() {
         return messageID;
     }
