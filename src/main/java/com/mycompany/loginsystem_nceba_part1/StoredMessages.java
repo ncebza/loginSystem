@@ -21,14 +21,14 @@ import com.google.gson.JsonParser;
 
 
 public class StoredMessages {
- // Arrays required for Part 3
+ // Arrays
     private static Message[] sentMessages = new Message[100];
     private static Message[] disregardedMessages = new Message[100];
   
 private static String[] messageIDs = new String[100];
     private static String[] messageHashes = new String[100];
 
-// Arrays for messages read from the JSON file
+// Arrays for messages read to from the JSON file
     private static String[] storedMessageIDs = new String[100];
     private static String[] storedRecipients = new String[100];
     private static String[] storedMessageTexts = new String[100];
@@ -206,7 +206,7 @@ for (int i = 0; i < disregardedCount; i++) {
         }
     }
 
-    // These methods will connect Message.java to the Part 3 arrays
+    
     public static void addSentMessage(Message message) {
 
         if (sentCount < sentMessages.length) {
