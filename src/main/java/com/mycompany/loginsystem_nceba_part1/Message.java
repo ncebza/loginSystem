@@ -121,53 +121,7 @@ public class Message {
         return sentMessages.size();
     }
 
-    public void storeMessage() {
-        try (FileWriter writer = new FileWriter("messages.json")) {
-            writer.write("[\n");
-
-            for (int i = 0; i < storedMessages.size(); i++) {
-                Message message = storedMessages.get(i);
-
-                writer.write(" {\n");
-                writer.write(" \"messageID\": \""
-                        + escapeJSON(message.messageID) + "\",\n");
-                writer.write(" \"messageNumber\": "
-                        + message.messageNumber + ",\n");
-                writer.write(" \"recipient\": \""
-                        + escapeJSON(message.recipient) + "\",\n");
-                writer.write(" \"messageText\": \""
-                        + escapeJSON(message.messageText) + "\",\n");
-                writer.write(" \"messageHash\": \""
-                        + escapeJSON(message.messageHash) + "\",\n");
-                writer.write(" \"messageStatus\": \"Stored\"\n");
-                writer.write(" }");
-
-                if (i < storedMessages.size() - 1) {
-                    writer.write(",");
-                }
-
-                writer.write("\n");
-            }
-
-            writer.write("]\n");
-
-        } catch (IOException e) {
-            System.out.println("Error storing message.");
-        }
-    }
-
-    private String escapeJSON(String text) {
-        if (text == null) {
-            return "";
-        }
-
-        return text.replace("\\", "\\\\")
-                .replace("\"", "\\\"")
-                .replace("\n", "\\n")
-                .replace("\r", "\\r")
-                .replace("\t", "\\t");
-    }
-
+  
     public String getMessageID() {
         return messageID;
     }
