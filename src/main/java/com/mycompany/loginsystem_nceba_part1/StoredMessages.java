@@ -354,7 +354,9 @@ for (int i = 0; i < disregardedCount; i++) {
                 }
   storedCount--;
 
-                saveStoredMessages();
+rebuildMessageDetails();
+
+saveStoredMessages();
 
                 System.out.println("Message: \"" + deletedMessage
                         + "\" successfully deleted.");
