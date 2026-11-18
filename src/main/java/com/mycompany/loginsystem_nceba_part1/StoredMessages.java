@@ -104,6 +104,21 @@ private static final String FILE_NAME = "messages.json";
     public static void loadStoredMessages() {
 
         storedCount = 0;
+messageIDCount = 0;
+messageHashCount = 0;
+
+// IDs and hashes for sent messages
+for (int i = 0; i < sentCount; i++) {
+    addMessageID(sentMessages[i].getMessageID());
+    addMessageHash(sentMessages[i].getMessageHash());
+}
+
+//IDs and hashes for disregarded messages
+for (int i = 0; i < disregardedCount; i++) {
+    addMessageID(disregardedMessages[i].getMessageID());
+    addMessageHash(disregardedMessages[i].getMessageHash());
+}
+
 
         try (FileReader reader = new FileReader(FILE_NAME)) {
 
