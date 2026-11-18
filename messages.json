@@ -1,10 +1,20 @@
 [
- {
- "messageID": "4184475033",
- "messageNumber": 1,
- "recipient": "+27812345678",
- "messageText": "Hello world",
- "messageHash": "41:1:HELLOWORLD",
- "messageStatus": "Stored"
- }
+  {
+    "messageID": "4184475033",
+    "messageNumber": 1,
+    "recipient": "+27812345678",
+    "messageText": "Hello world",
+    "messageHash": "41:1:HELLOWORLD",
+    "sender": "Developer",
+    "messageStatus": "Stored"
+  },
+  {
+    "messageID": "6555160093",
+    "messageNumber": 1,
+    "recipient": "+27812345678",
+    "messageText": "Hello world",
+    "messageHash": "65:1:HELLOWORLD",
+    "sender": "Developer",
+    "messageStatus": "Stored"
+  }
 ]
