@@ -21,8 +21,8 @@ public class LoginClass {
                     return "Welcome "
                             + name
                             + ", "
-                            +surname
-                            +"is set to see you agaim.";
+                            + " " + surname
+                            +", it is great to see you again.";
                 }
                 //if what the user typed does not matche with the registre data  it does not go through the user needs to try again
                 return "Username or password incorrect.";
