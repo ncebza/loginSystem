@@ -35,7 +35,7 @@ public class StoredMessagesTest {
             originalFile = Files.readAllBytes(filePath);
         }
 
-        // The two prescribed stored messages: #2 and #5
+       
         String testData = "["
                 + "{"
                 + "\"messageID\":\"2222222222\","
