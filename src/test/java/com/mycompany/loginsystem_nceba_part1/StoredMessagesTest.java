@@ -35,7 +35,7 @@ public class StoredMessagesTest {
             originalFile = Files.readAllBytes(filePath);
         }
 
-        // The two prescribed stored messages: #2 and #5
+       
         String testData = "["
                 + "{"
                 + "\"messageID\":\"2222222222\","
@@ -90,7 +90,7 @@ public class StoredMessagesTest {
         return output.toString();
     }
 
-    // Test 1: Display sender and recipient
+    // Test 1:Display sender and recipient
     @Test
     public void testDisplaySenderAndRecipient() {
 
@@ -101,7 +101,7 @@ public class StoredMessagesTest {
         assertTrue(output.contains("+27838884567"));
     }
 
-    // Test 2: Display the longest stored message
+    // Test 2:Display the longest stored message
     @Test
     public void testDisplayLongestMessage() {
 
@@ -112,7 +112,7 @@ public class StoredMessagesTest {
                 "Where are you? You are late! I have asked you to be on time."));
     }
 
-    // Test 3: Search using a stored message ID
+    // Test 3:Search using a stored message ID
     @Test
     public void testSearchMessageID() {
 
@@ -126,7 +126,7 @@ public class StoredMessagesTest {
                 "Where are you? You are late! I have asked you to be on time."));
     }
 
-    // Test 4: Search messages using recipient
+    // Test 4:Search messages using recipient
     @Test
     public void testSearchRecipient() {
 
@@ -141,7 +141,7 @@ public class StoredMessagesTest {
                 "Ok, I am leaving without you."));
     }
 
-    // Test 5: Delete a stored message using its hash
+    // Test 5:Delete a stored message using its hash
     @Test
     public void testDeleteMessage() {
 
@@ -162,7 +162,7 @@ public class StoredMessagesTest {
                 "Ok, I am leaving without you."));
     }
 
-    // Test 6: Display the full stored messages report
+    // Test 6: Display the full storedmessages report
     @Test
     public void testDisplayReport() {
 
@@ -184,7 +184,7 @@ public class StoredMessagesTest {
                 "Ok, I am leaving without you."));
     }
 
-    // Test 7: Search for prescribed sent message #4
+    // Test7: Search for prescribed sent messags
     @Test
     public void testSearchMessageFourID() {
 
