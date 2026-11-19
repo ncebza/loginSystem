@@ -33,6 +33,19 @@ public class Message {
         this.messageHash = createMessageHash();
         this.messageStatus = "";
     }
+    public Message(int messageNumber, String recipient,
+        String messageText, String messageID) {
+
+    this.messageID = messageID;
+    this.messageNumber = messageNumber;
+    this.recipient = recipient;
+    this.messageText = messageText;
+    this.messageHash = createMessageHash();
+    this.messageStatus = "";
+
+    usedIDs.add(messageID);
+}
+
     
     public String generateMessageID() {
         Random random = new Random();

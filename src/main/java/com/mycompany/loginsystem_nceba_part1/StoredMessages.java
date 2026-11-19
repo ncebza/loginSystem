@@ -286,27 +286,66 @@ for (int i = 0; i < disregardedCount; i++) {
  // Option 3: Search using Message ID
     public void searchMessageID(Scanner input) {
 
-        System.out.print("Enter the Message ID: ");
-        String searchID = input.nextLine();
+    System.out.print("Enter the Message ID: ");
+    String searchID = input.nextLine();
 
-        boolean found = false;
+    boolean found = false;
 
-        for (int i = 0; i < storedCount; i++) {
+    // Search stored messages
+    for (int i = 0; i < storedCount; i++) {
 
-            if (storedMessageIDs[i].equals(searchID)) {
+        if (storedMessageIDs[i].equals(searchID)) {
+
+            System.out.println("\nMessage found!");
+            System.out.println("Recipient: " + storedRecipients[i]);
+            System.out.println("Message: " + storedMessageTexts[i]);
+
+            found = true;
+            break;
+        }
+    }
+
+    // Search sent messages
+    if (!found) {
+        for (int i = 0; i < sentCount; i++) {
+
+            if (sentMessages[i].getMessageID().equals(searchID)) {
 
                 System.out.println("\nMessage found!");
-                System.out.println("Recipient: " + storedRecipients[i]);
-                System.out.println("Message: " + storedMessageTexts[i]);
+                System.out.println("Recipient: "
+                        + sentMessages[i].getRecipient());
+                System.out.println("Message: "
+                        + sentMessages[i].getMessageText());
 
                 found = true;
                 break;
             }
         }
-     if (!found) {
-            System.out.println("Message ID not found.");
+    }
+
+    // Search disregarded messages
+    if (!found) {
+        for (int i = 0; i < disregardedCount; i++) {
+
+            if (disregardedMessages[i].getMessageID().equals(searchID)) {
+
+                System.out.println("\nMessage found!");
+                System.out.println("Recipient: "
+                        + disregardedMessages[i].getRecipient());
+                System.out.println("Message: "
+                        + disregardedMessages[i].getMessageText());
+
+                found = true;
+                break;
+            }
         }
     }
+
+    if (!found) {
+        System.out.println("Message ID not found.");
+    }
+}
+
   // Option 4: Search messages using recipient
     public void searchRecipient(Scanner input) {
 
