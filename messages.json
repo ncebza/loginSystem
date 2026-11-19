@@ -1,1 +1,11 @@
-[ ]
+[
+  {
+    "messageID": "5225847637",
+    "messageNumber": 1,
+    "recipient": "+27812345678",
+    "messageText": "Hello world",
+    "messageHash": "52:1:HELLOWORLD",
+    "sender": "Developer",
+    "messageStatus": "Stored"
+  }
+]
