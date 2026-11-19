@@ -13,7 +13,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -22,7 +21,8 @@ import java.util.Scanner;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class StoredMessagesTest {
- private Path filePath = Path.of("messages.json");
+
+    private Path filePath = Path.of("messages.json");
     private byte[] originalFile;
     private boolean fileExisted;
 
@@ -35,21 +35,24 @@ public class StoredMessagesTest {
             originalFile = Files.readAllBytes(filePath);
         }
 
+        // The two prescribed stored messages: #2 and #5
         String testData = "["
-                + "{"
-                + "\"messageID\":\"1111111111\","
-                + "\"messageNumber\":1,"
-                + "\"recipient\":\"+27838884567\","
-                + "\"messageText\":\"Hi there.\","
-                + "\"messageHash\":\"11:1:HITHERE\","
-                + "\"messageStatus\":\"Stored\""
-                + "},"
                 + "{"
                 + "\"messageID\":\"2222222222\","
                 + "\"messageNumber\":2,"
                 + "\"recipient\":\"+27838884567\","
-                + "\"messageText\":\"This is the longest stored message for testing.\","
-                + "\"messageHash\":\"22:2:THISSTORED\","
+                + "\"messageText\":\"Where are you? You are late! I have asked you to be on time.\","
+                + "\"messageHash\":\"22:2:WHERETIME.\","
+                + "\"sender\":\"Developer\","
+                + "\"messageStatus\":\"Stored\""
+                + "},"
+                + "{"
+                + "\"messageID\":\"5555555555\","
+                + "\"messageNumber\":5,"
+                + "\"recipient\":\"+27838884567\","
+                + "\"messageText\":\"Ok, I am leaving without you.\","
+                + "\"messageHash\":\"55:5:OK,YOU.\","
+                + "\"sender\":\"Developer\","
                 + "\"messageStatus\":\"Stored\""
                 + "}"
                 + "]";
@@ -62,6 +65,7 @@ public class StoredMessagesTest {
     @AfterEach
     public void tearDown() throws Exception {
 
+        // Restore the original JSON file
         if (fileExisted) {
             Files.write(filePath, originalFile);
         } else {
@@ -69,10 +73,12 @@ public class StoredMessagesTest {
         }
     }
 
+    // Capture output displayed by methods
     private String captureOutput(Runnable action) {
 
         PrintStream original = System.out;
-        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        ByteArrayOutputStream output =
+                new ByteArrayOutputStream();
 
         try {
             System.setOut(new PrintStream(output));
@@ -84,6 +90,7 @@ public class StoredMessagesTest {
         return output.toString();
     }
 
+    // Test 1: Display sender and recipient
     @Test
     public void testDisplaySenderAndRecipient() {
 
@@ -94,6 +101,7 @@ public class StoredMessagesTest {
         assertTrue(output.contains("+27838884567"));
     }
 
+    // Test 2: Display the longest stored message
     @Test
     public void testDisplayLongestMessage() {
 
@@ -101,9 +109,10 @@ public class StoredMessagesTest {
                 new StoredMessages().displayLongestMessage());
 
         assertTrue(output.contains(
-                "This is the longest stored message for testing."));
+                "Where are you? You are late! I have asked you to be on time."));
     }
 
+    // Test 3: Search using a stored message ID
     @Test
     public void testSearchMessageID() {
 
@@ -112,10 +121,12 @@ public class StoredMessagesTest {
                         new Scanner("2222222222\n")));
 
         assertTrue(output.contains("+27838884567"));
+
         assertTrue(output.contains(
-                "This is the longest stored message for testing."));
+                "Where are you? You are late! I have asked you to be on time."));
     }
 
+    // Test 4: Search messages using recipient
     @Test
     public void testSearchRecipient() {
 
@@ -123,36 +134,73 @@ public class StoredMessagesTest {
                 new StoredMessages().searchRecipient(
                         new Scanner("+27838884567\n")));
 
-        assertTrue(output.contains("Hi there."));
         assertTrue(output.contains(
-                "This is the longest stored message for testing."));
+                "Where are you? You are late! I have asked you to be on time."));
+
+        assertTrue(output.contains(
+                "Ok, I am leaving without you."));
     }
 
+    // Test 5: Delete a stored message using its hash
     @Test
     public void testDeleteMessage() {
 
         String output = captureOutput(() ->
                 new StoredMessages().deleteMessage(
-                        new Scanner("22:2:THISSTORED\n")));
+                        new Scanner("22:2:WHERETIME.\n")));
 
-        assertTrue(output.toLowerCase().contains("deleted"));
+        assertTrue(output.contains(
+                "Message: \"Where are you? You are late! I have asked you to be on time.\" successfully deleted."));
 
         String report = captureOutput(() ->
                 new StoredMessages().displayReport());
 
         assertFalse(report.contains(
-                "This is the longest stored message for testing."));
+                "Where are you? You are late! I have asked you to be on time."));
+
+        assertTrue(report.contains(
+                "Ok, I am leaving without you."));
     }
 
+    // Test 6: Display the full stored messages report
     @Test
     public void testDisplayReport() {
 
         String output = captureOutput(() ->
                 new StoredMessages().displayReport());
 
-        assertTrue(output.contains("1111111111"));
         assertTrue(output.contains("2222222222"));
+        assertTrue(output.contains("5555555555"));
+
+        assertTrue(output.contains("22:2:WHERETIME."));
+        assertTrue(output.contains("55:5:OK,YOU."));
+
         assertTrue(output.contains("+27838884567"));
-        assertTrue(output.contains("Hi there."));
-    }    
+
+        assertTrue(output.contains(
+                "Where are you? You are late! I have asked you to be on time."));
+
+        assertTrue(output.contains(
+                "Ok, I am leaving without you."));
+    }
+
+    // Test 7: Search for prescribed sent message #4
+    @Test
+    public void testSearchMessageFourID() {
+
+        Message message4 = new Message(
+                4,
+                "+27838884567",
+                "It is dinner time !",
+                "0838884567");
+
+        message4.SentMessage(1);
+
+        String output = captureOutput(() ->
+                new StoredMessages().searchMessageID(
+                        new Scanner("0838884567\n")));
+
+        assertTrue(output.contains("It is dinner time !"));
+    }
 }
+
